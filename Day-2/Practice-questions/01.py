@@ -1,0 +1,5 @@
+#A function that adds two numbers
+def add_numbers(num1,num2):
+  return num1+num2
+
+print(add_numbers(10,20))
