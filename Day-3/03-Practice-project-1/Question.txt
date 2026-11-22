@@ -1,0 +1,25 @@
+Student Marks Analyzer
+----------------------
+
+Problem statement
+
+You're building a small program to analyze a student's examination marks.
+
+Start with this data:
+marks = [85, 76, 92, 68, 89]
+
+Your requirements:
+------------------
+1. Calculate the total marks using a loop.
+2. Calculate the average marks.
+3. Find the highest mark using a loop.
+4. Determine whether the student passed or failed. Passing average is 40.
+5. Print the result.
+
+Rules:
+------
+  
+- Use only concepts we've already learned.
+- Don't copy a solution from the internet.
+- Try to solve it independently.
+- Explain what your code does.
