@@ -32,3 +32,5 @@ print("Calculating...")
 
 
 print(f"Result : {calculator(num1,operator,num2)}")
+
+#operator validation in 03-calc.py
