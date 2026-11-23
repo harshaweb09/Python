@@ -21,3 +21,5 @@ def calculator(a,operator,b):
     return "Error: Invalid operator.\nSupported operators are '+' , '-' , '*' , '/' "
 
 print(f"Result : {calculator(num1,operator,num2)}")
+
+#improved code in 02-calc.py
