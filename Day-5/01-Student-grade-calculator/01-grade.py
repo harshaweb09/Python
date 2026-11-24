@@ -20,7 +20,7 @@ def actual_total_marks(marks):
   return len(marks)*100
 
 def average(marks):
-  return (f"{(total_marks_obtained(marks)/actual_total_marks(marks))*100}%")
+  return (total_marks_obtained(marks)/actual_total_marks(marks))*100
 
 def check_pass_fail(marks):
   for mark in marks.values():
@@ -28,6 +28,23 @@ def check_pass_fail(marks):
       return "FAIL"
   return "Pass"
 
+def grade_calculator(is_passed,percentage):
+  if is_passed == "FAIL":
+    return "F"
+  else:
+    if percentage >= 90:
+      return "A"
+    elif percentage >= 80 and percentage < 90:
+      return "B"
+    elif percentage >= 70 and percentage < 80:
+      return "C"
+    elif percentage >= 60 and percentage < 70:
+      return "D"
+    elif percentage >= 50 and percentage < 60:
+      return "E"
+    else:
+      return "F"    
+    
 subjects = ("English","Mathematics","Science","Social Studies","Computer Science")
 
 student_marks = {}
@@ -41,3 +58,4 @@ print(student_marks)
 print(f"Total Marks: {int(total_marks_obtained(student_marks))}/{actual_total_marks(student_marks)}")
 print(average(student_marks))
 print(check_pass_fail(student_marks))
+print(grade_calculator(check_pass_fail(student_marks),average(student_marks)))
