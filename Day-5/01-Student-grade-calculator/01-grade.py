@@ -19,6 +19,9 @@ def total_marks_obtained(subjects):
 def actual_total_marks(marks):
   return len(marks)*100
 
+def average(marks):
+  return (f"{(total_marks_obtained(marks)/actual_total_marks(marks))*100}%")
+
 subjects = ("English","Mathematics","Science","Social Studies","Computer Science")
 
 marks = {}
@@ -30,3 +33,4 @@ for subject in subjects:
 
 print(marks)
 print(f"Total Marks: {int(total_marks_obtained(marks))}/{actual_total_marks(marks)}")
+print(average(marks))
