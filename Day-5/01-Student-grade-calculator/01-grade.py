@@ -45,6 +45,18 @@ def grade_calculator(is_passed,percentage):
     else:
       return "F"    
     
+def display_student_report(student):
+  print("\n")
+  print("========== STUDENT REPORT ==========\n")
+  print(f"Student Name: {name}\n")
+  print(student_marks,"\n")
+  print("------------------------------------\n")
+  print(f"Total Marks: {int(total_marks_obtained(student))}/{actual_total_marks(student)}")
+  print(f"Average : {average(student_marks)}%")
+  print(f"Result : {check_pass_fail(student_marks)}")
+  print(f"Grade : {grade_calculator(check_pass_fail(student_marks),average(student_marks))}")
+  
+  
 subjects = ("English","Mathematics","Science","Social Studies","Computer Science")
 
 student_marks = {}
@@ -53,9 +65,5 @@ name = input("Enter your name : ")
 
 for subject in subjects:
   student_marks[subject] = input_and_validate_number(subject)
-
-print(student_marks)
-print(f"Total Marks: {int(total_marks_obtained(student_marks))}/{actual_total_marks(student_marks)}")
-print(average(student_marks))
-print(check_pass_fail(student_marks))
-print(grade_calculator(check_pass_fail(student_marks),average(student_marks)))
+  
+display_student_report(student_marks)
