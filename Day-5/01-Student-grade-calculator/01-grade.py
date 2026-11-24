@@ -49,9 +49,10 @@ def display_student_report(student):
   print("\n")
   print("========== STUDENT REPORT ==========\n")
   print(f"Student Name: {name}\n")
-  print(student_marks,"\n")
-  print("------------------------------------\n")
-  print(f"Total Marks: {int(total_marks_obtained(student))}/{actual_total_marks(student)}")
+  for subject,marks in student_marks.items():
+    print(f"{subject} : {marks}")
+  print("\n------------------------------------\n")
+  print(f"Total Marks: {total_marks_obtained(student)}/{actual_total_marks(student)}")
   print(f"Average : {average(student_marks)}%")
   print(f"Result : {check_pass_fail(student_marks)}")
   print(f"Grade : {grade_calculator(check_pass_fail(student_marks),average(student_marks))}")
