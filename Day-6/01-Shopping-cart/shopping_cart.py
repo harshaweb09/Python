@@ -15,7 +15,7 @@ def view_products():
     print(f"{product['product_id']:<12} {product['product_name']:<16} {product['price']:>6}")
 
 def display_main_menu():
-  print("========== SHOPPING CART ==========\n")
+  print("\n========== SHOPPING CART ==========\n")
   print("1. View Products")
   print("2. Add Product to Cart")
   print("3. View Cart")
@@ -31,6 +31,17 @@ def get_menu_choice():
       if 1 <= choice <= 7 :
         return choice
       else:
-        print("Invalid choice! Please select an option from 1 to 7.")
+        print("\nInvalid choice! Please select an option from 1 to 7.\n")
     except ValueError:
-      print("Invalid input! Please enter a number from 1 to 7." )
+      print("\nInvalid input! Please enter a number from 1 to 7.\n" )
+
+while True:
+  display_main_menu()
+  choice = get_menu_choice()
+  if choice == 1:
+    view_products()
+  elif 2 <= choice <= 6:
+    print("\nFeature coming soon!\n")
+  elif choice == 7:
+    print("\nThanks for shopping!\n")
+    break
