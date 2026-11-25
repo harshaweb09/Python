@@ -24,3 +24,13 @@ def display_main_menu():
   print("6. Checkout")
   print("7. Exit\n")
 
+def get_menu_choice():
+  while True:
+    try:
+      choice = int(input("Choose an option : "))
+      if 1 <= choice <= 7 :
+        return choice
+      else:
+        print("Invalid choice! Please select an option from 1 to 7.")
+    except ValueError:
+      print("Invalid input! Please enter a number from 1 to 7." )
