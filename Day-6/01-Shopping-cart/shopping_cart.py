@@ -13,3 +13,14 @@ def view_products():
   print(f"\n{'Product Id':<12} {'Product Name':<16} {'Price':>6}\n")
   for product in product_catalogue:
     print(f"{product['product_id']:<12} {product['product_name']:<16} {product['price']:>6}")
+
+def display_main_menu():
+  print("========== SHOPPING CART ==========\n")
+  print("1. View Products")
+  print("2. Add Product to Cart")
+  print("3. View Cart")
+  print("4. Update Product Quantity")
+  print("5. Remove Product from Cart")
+  print("6. Checkout")
+  print("7. Exit\n")
+
