@@ -52,10 +52,9 @@ def add_to_cart():
         if quantity > 0:
           if product_id in cart:
             cart[product_id] += quantity
-            print(cart)
           else:
             cart[product_id] = quantity
-            print(cart)
+          print("\nGreat choice! Item added to your cart.\n\nReady to checkout or keep shopping?")
           break
         else:
           print("Enter quantity greater than 0")
@@ -63,6 +62,21 @@ def add_to_cart():
         print("Enter a positive valid quantity ")
   else:
     print("\nProduct not found! ,for knowing avaliable products choose option 1\n")
+
+def view_cart():
+  if not cart:
+    print("\nYour cart is empty! let’s find something great or useful to put in it!\n")
+  else:
+    print("\n========== YOUR CART ==========\n")
+    print(f"{'Product ID':<12} {'Product Name':<12} {'Price':>8} {'Quantity':<10} {'Subtotal':<12}\n")
+    total = 0
+    for product_id in cart:
+      for product in product_catalogue:
+        if product_id == product['product_id']:
+          print(f"{product_id:<12} {product['product_name']:<12} {product['price']:>4} {cart[product_id]:<6} {product['price']*cart[product_id]:<12}\n")
+          total += product['price']*cart[product_id]
+    print('-'*50)
+    print(f"\nTotal : {total}\n")
 
 while True:
   display_main_menu()
@@ -72,7 +86,7 @@ while True:
   elif choice == 2:
     add_to_cart()
   elif choice == 3:
-    print("\nFeature coming soon!\n")
+    view_cart()
   elif choice == 4:
     print("\nFeature coming soon!\n")
   elif choice == 5:
