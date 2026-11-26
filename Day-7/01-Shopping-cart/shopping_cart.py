@@ -10,6 +10,8 @@ product_catalogue = [
 
 cart = {}
 
+is_checked_out = False
+
 def view_products():
   print("======== AVAILABLE PRODUCTS ========")
   print(f"\n{'Product Id':<12} {'Product Name':<16} {'Price':>6}\n")
@@ -121,6 +123,17 @@ def remove_product_from_cart():
     else:
       print("\nProduct not found in the cart\n")
 
+def checkout():
+  if not cart:
+    print("\nYour cart is empty! Let's find something you'll love.\n")
+  else:
+    view_cart()
+    print("\n" + "=" * 40)
+    print("       ORDER PLACED SUCCESSFULLY!")
+    print("     Thank you for shopping with us.")
+    print("       Your order is confirmed!")
+    print("=" * 40 + "\n")
+
 while True:
   display_main_menu()
   choice = get_menu_choice()
@@ -135,7 +148,7 @@ while True:
   elif choice == 5:
     remove_product_from_cart()
   elif choice == 6:
-    print("\nFeature coming soon!\n")
+    checkout()
   elif choice == 7:
     print("\nThanks for shopping!\n")
     break
