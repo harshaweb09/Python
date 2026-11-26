@@ -10,8 +10,6 @@ product_catalogue = [
 
 cart = {}
 
-is_checked_out = False
-
 def view_products():
   print("======== AVAILABLE PRODUCTS ========")
   print(f"\n{'Product Id':<12} {'Product Name':<16} {'Price':>6}\n")
@@ -46,11 +44,11 @@ def check_product_availability(product_id):
   return False
 
 def add_to_cart():
-  product_id = input("Enter Product ID: ")
+  product_id = input("\nEnter Product ID: ").strip().upper()
   if check_product_availability(product_id):
     while True:
       try:
-        quantity = int(input("Enter Quantity: "))
+        quantity = int(input("\nEnter Quantity: "))
         if quantity > 0:
           if product_id in cart:
             cart[product_id] += quantity
@@ -59,9 +57,9 @@ def add_to_cart():
           print("\nGreat choice! Item added to your cart.\n\nReady to checkout or keep shopping?")
           break
         else:
-          print("Enter quantity greater than 0")
+          print("\nEnter quantity greater than 0")
       except ValueError:
-        print("Enter a positive valid quantity ")
+        print("\nEnter a positive valid quantity ")
   else:
     print("\nProduct not found! ,for knowing avaliable products choose option 1\n")
 
@@ -94,7 +92,7 @@ def view_cart():
 
 def update_cart():
   while True:
-    product_id = input("\nEnter Product ID to update the quantity: ")
+    product_id = input("\nEnter Product ID to update the quantity: ").strip().upper()
     if product_id in cart:
       while True:
         try:
@@ -114,7 +112,7 @@ def update_cart():
 
 def remove_product_from_cart():
   while True:
-    product_id = input("\nEnter Product ID to remove the product: ")
+    product_id = input("\nEnter Product ID to remove the product: ").strip().upper()
     if product_id in cart:
       del cart[product_id]
       print("\nProduct removed from your cart successfully!\n")
@@ -134,6 +132,10 @@ def checkout():
     print("       Your order is confirmed!")
     print("=" * 40 + "\n")
 
+def exit_application():
+  print("\nThank you for visiting our store!")
+  print("We hope to see you again. Have a great day!\n")
+
 while True:
   display_main_menu()
   choice = get_menu_choice()
@@ -150,6 +152,6 @@ while True:
   elif choice == 6:
     checkout()
   elif choice == 7:
-    print("\nThanks for shopping!\n")
+    exit_application()
     break
 
