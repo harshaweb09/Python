@@ -68,12 +68,24 @@ def view_cart():
     print("\nYour cart is empty! let’s find something great or useful to put in it!\n")
   else:
     print("\n========== YOUR CART ==========\n")
-    print(f"{'Product ID':<12} {'Product Name':<12} {'Price':>8} {'Quantity':<10} {'Subtotal':<12}\n")
+    print(
+      f"{'Product ID':<12} "
+      f"{'Product Name':<14} "
+      f"{'Price':>8} "
+      f"{'Quantity':>10} "
+      f"{'Subtotal':>12} "
+      "\n")
     total = 0
     for product_id in cart:
       for product in product_catalogue:
         if product_id == product['product_id']:
-          print(f"{product_id:<12} {product['product_name']:<12} {product['price']:>4} {cart[product_id]:<6} {product['price']*cart[product_id]:<12}\n")
+          print(
+            f"{product_id:<12} "
+            f"{product['product_name']:<14} "
+            f"{product['price']:>8} "
+            f"{cart[product_id]:^10} "
+            f"{product['price']*cart[product_id]:>12} "
+            "\n")
           total += product['price']*cart[product_id]
     print('-'*50)
     print(f"\nTotal : {total}\n")
