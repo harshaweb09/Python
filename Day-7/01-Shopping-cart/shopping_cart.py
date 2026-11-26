@@ -119,7 +119,7 @@ def remove_product_from_cart():
       view_cart()
       break
     else:
-      print("\nProduct not found in the cart\n")
+      print("\nProduct not found in the cart")
 
 def checkout():
   if not cart:
