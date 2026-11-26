@@ -8,6 +8,8 @@ product_catalogue = [
   {"product_id":"P105","product_name":"USB Cable","price":200}
   ] 
 
+cart = {}
+
 def view_products():
   print("======== AVAILABLE PRODUCTS ========")
   print(f"\n{'Product Id':<12} {'Product Name':<16} {'Price':>6}\n")
@@ -35,13 +37,36 @@ def get_menu_choice():
     except ValueError:
       print("\nInvalid input! Please enter a number from 1 to 7.\n" )
 
+# def check_product_availability(product_id):
+#   for product in product_catalogue:
+#     if product['product_id'] == product_id:
+#       return true
+#   return false
+
+
+# def add_to_cart():
+#    product_id = input("Enter Product ID: ")
+#    if check_product_availability(product_id):
+#     try:
+#       quantity = int(input("Enter Quantity: "))
+#       if quantity > 0:
+#         print("Added to cart")
+#       else:
+#         print("Enter quantity greater than 0")
+#     except ValueError:
+#       print("Enter a positive valid quantity ")
+
 while True:
   display_main_menu()
   choice = get_menu_choice()
   if choice == 1:
     view_products()
-  elif 2 <= choice <= 6:
+  elif choice == 2:
+    # add_to_cart()
+    print("\nFeature coming soon!\n")
+  elif 3 <= choice <= 6:
     print("\nFeature coming soon!\n")
   elif choice == 7:
     print("\nThanks for shopping!\n")
     break
+
