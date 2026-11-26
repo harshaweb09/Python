@@ -110,6 +110,16 @@ def update_cart():
     else:
       print("\nProduct not found in the cart\n")
 
+def remove_product_from_cart():
+  while True:
+    product_id = input("\nEnter Product ID to remove the product: ")
+    if product_id in cart:
+      del cart[product_id]
+      print("\nProduct removed from your cart successfully!\n")
+      view_cart()
+      break
+    else:
+      print("\nProduct not found in the cart\n")
 
 while True:
   display_main_menu()
@@ -123,7 +133,7 @@ while True:
   elif choice == 4:
     update_cart()
   elif choice == 5:
-    print("\nFeature coming soon!\n")
+    remove_product_from_cart()
   elif choice == 6:
     print("\nFeature coming soon!\n")
   elif choice == 7:
