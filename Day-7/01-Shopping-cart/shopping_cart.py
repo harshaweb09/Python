@@ -83,12 +83,33 @@ def view_cart():
             f"{product_id:<12} "
             f"{product['product_name']:<14} "
             f"{product['price']:>8} "
-            f"{cart[product_id]:^10} "
+            f"{cart[product_id]:>10} "
             f"{product['price']*cart[product_id]:>12} "
             "\n")
           total += product['price']*cart[product_id]
-    print('-'*50)
+    print('-'*60)
     print(f"\nTotal : {total}\n")
+
+def update_cart():
+  while True:
+    product_id = input("\nEnter Product ID to update the quantity: ")
+    if product_id in cart:
+      while True:
+        try:
+          quantity = int(input("\nEnter Quantity: "))
+          if quantity > 0:
+            cart[product_id] = quantity
+            print("\nQuantity has been updated\n")
+            view_cart()
+            break
+          else:
+            print("\nEnter quantity greater than 0")
+        except ValueError:
+          print("\nEnter a positive valid quantity ")
+      break
+    else:
+      print("\nProduct not found in the cart\n")
+
 
 while True:
   display_main_menu()
@@ -100,7 +121,7 @@ while True:
   elif choice == 3:
     view_cart()
   elif choice == 4:
-    print("\nFeature coming soon!\n")
+    update_cart()
   elif choice == 5:
     print("\nFeature coming soon!\n")
   elif choice == 6:
